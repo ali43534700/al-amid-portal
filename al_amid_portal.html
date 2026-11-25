@@ -1,0 +1,2446 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ألعميد الدولي — العميد للتجارة</title>
+  <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070b14'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%2338bdf8' stroke-width='2.5' stroke-dasharray='4 3'/%3E%3Ctext x='32' y='29' text-anchor='middle' fill='%23ffffff' font-family='sans-serif' font-size='11' font-weight='bold'%3E%D8%A7%D9%84%D8%B9%D9%85%D9%8A%D8%AF%3C/text%3E%3Ctext x='32' y='43' text-anchor='middle' fill='%2338bdf8' font-family='sans-serif' font-size='8' font-weight='bold'%3E%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #f1f5f9;
+      --surface: #ffffff;
+      --surface-2: #f8fafc;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --primary: #0f172a;
+      --primary-2: #1e293b;
+      --accent: #0284c7;
+      --accent-soft: #e0f2fe;
+      --success: #059669;
+      --success-soft: #d1fae5;
+      --warning: #d97706;
+      --warning-soft: #fef3c7;
+      --danger: #dc2626;
+      --danger-soft: #fee2e2;
+      --shadow-btn: 0 4px 0 #020617, 0 8px 16px rgba(15, 23, 42, 0.16);
+      --shadow-btn-hover: 0 6px 0 #020617, 0 12px 20px rgba(15, 23, 42, 0.22);
+      --shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* أزرار نافرة وأنيقة */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s ease;
+      user-select: none;
+      text-decoration: none;
+    }
+
+    .btn:active {
+      transform: translateY(3px);
+    }
+
+    .btn-3d {
+      background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+      color: #ffffff;
+      box-shadow: var(--shadow-btn);
+      border-color: #020617;
+    }
+
+    .btn-3d:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-btn-hover);
+    }
+
+    .btn-3d:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 #020617, 0 3px 8px rgba(15, 23, 42, 0.18);
+    }
+
+    .btn-accent {
+      background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%);
+      color: #ffffff;
+      border-color: #0369a1;
+      box-shadow: 0 4px 0 #0369a1, 0 8px 16px rgba(2, 132, 199, 0.25);
+    }
+
+    .btn-accent:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 #0369a1, 0 12px 20px rgba(2, 132, 199, 0.32);
+    }
+
+    .btn-accent:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 #0369a1;
+    }
+
+    .btn-success {
+      background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+      color: #ffffff;
+      border-color: #047857;
+      box-shadow: 0 4px 0 #047857, 0 8px 14px rgba(5, 150, 105, 0.22);
+    }
+
+    .btn-success:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-success:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 #047857;
+    }
+
+    .btn-soft {
+      background: #ffffff;
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: 0 3px 0 #cbd5e1, 0 6px 12px rgba(15, 23, 42, 0.06);
+    }
+
+    .btn-soft:hover {
+      background: #f8fafc;
+      transform: translateY(-1px);
+    }
+
+    .btn-soft:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 0 #cbd5e1;
+    }
+
+    .btn-danger {
+      background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
+      color: #ffffff;
+      border-color: #b91c1c;
+      box-shadow: 0 4px 0 #b91c1c;
+    }
+
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 0.82rem;
+      border-radius: 10px;
+    }
+
+    /* هوية وشعار العميد للتجارة */
+    .brand-emblem {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: radial-gradient(circle at 50% 45%, #172554 0%, #070b14 78%);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.22), inset 0 0 12px rgba(56, 189, 248, 0.18);
+      flex-shrink: 0;
+    }
+
+    .brand-logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-svg-mark {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.05;
+      color: #ffffff;
+      text-align: center;
+      padding: 2px;
+    }
+
+    .brand-svg-mark .ring-mini {
+      font-size: 7px;
+      color: #7dd3fc;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-svg-mark .main-word {
+      font-size: 11px;
+      font-weight: 900;
+      color: #ffffff;
+      text-shadow: 0 0 8px rgba(56, 189, 248, 0.75);
+    }
+
+    .brand-svg-mark .sub-word {
+      font-size: 8px;
+      font-weight: 700;
+      color: #bae6fd;
+    }
+
+    /* شاشة الدخول */
+    .auth-wrapper {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(2, 132, 199, 0.12), transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(15, 23, 42, 0.1), transparent 45%),
+        var(--bg);
+    }
+
+    .auth-card {
+      width: 100%;
+      max-width: 460px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1);
+    }
+
+    .auth-header {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .auth-header .brand-emblem {
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .auth-header .brand-logo-box {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+    }
+
+    .auth-header h1 {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--text);
+    }
+
+    .auth-header p {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .role-switch {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background: var(--surface-2);
+      padding: 6px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      margin-bottom: 18px;
+    }
+
+    .role-tab {
+      padding: 9px;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+      font-weight: 700;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .role-tab.active {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 3px 8px rgba(15, 23, 42, 0.2);
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 0.92rem;
+      background: var(--surface);
+      color: var(--text);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .form-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    /* الشريط العلوي */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
+    }
+
+    .topbar-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .topbar-title h2 {
+      font-size: 1.1rem;
+      font-weight: 900;
+    }
+
+    .topbar-title span {
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: block;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    /* جرس التنبيهات للأدمن */
+    .bell-wrapper {
+      position: relative;
+    }
+
+    .bell-btn {
+      position: relative;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      font-size: 1.15rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 0 #cbd5e1;
+      transition: transform 0.12s ease;
+    }
+
+    .bell-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 0 #cbd5e1;
+    }
+
+    .bell-badge {
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      min-width: 20px;
+      height: 20px;
+      padding: 0 5px;
+      border-radius: 999px;
+      background: var(--danger);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(220, 38, 38, 0.4);
+    }
+
+    .notif-dropdown {
+      position: absolute;
+      top: 52px;
+      left: 0;
+      width: 350px;
+      max-width: 92vw;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+      z-index: 60;
+      overflow: hidden;
+    }
+
+    .notif-header {
+      padding: 12px 14px;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .notif-list {
+      max-height: 320px;
+      overflow-y: auto;
+    }
+
+    .notif-item {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.84rem;
+      transition: background 0.15s ease;
+    }
+
+    .notif-item.unread {
+      background: #f0f9ff;
+    }
+
+    .notif-item .notif-time {
+      font-size: 0.74rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* الحاوية الرئيسية والتنقل */
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .nav-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      background: var(--surface);
+      padding: 8px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+    }
+
+    .nav-pill {
+      padding: 9px 15px;
+      border-radius: 12px;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .nav-pill:hover {
+      background: var(--surface-2);
+      color: var(--text);
+    }
+
+    .nav-pill.active {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 3px 0 #020617;
+    }
+
+    /* البطاقات والشبكات */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 18px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .balance-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      padding: 20px;
+      color: #ffffff;
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.14);
+    }
+
+    .balance-card.try {
+      background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
+    }
+
+    .balance-card.usd {
+      background: linear-gradient(135deg, #064e3b 0%, #059669 100%);
+    }
+
+    .balance-card.eur {
+      background: linear-gradient(135deg, #312e81 0%, #6d28d9 100%);
+    }
+
+    .balance-label {
+      font-size: 0.85rem;
+      opacity: 0.88;
+      font-weight: 700;
+    }
+
+    .balance-value {
+      font-size: 1.75rem;
+      font-weight: 900;
+      margin: 8px 0 4px;
+      letter-spacing: 0.4px;
+    }
+
+    .balance-sub {
+      font-size: 0.78rem;
+      opacity: 0.82;
+    }
+
+    /* مربع أسعار الصرف البارز */
+    .rates-box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .rate-tile {
+      background: #ffffff;
+      border: 1px solid #dbeafe;
+      border-radius: 14px;
+      padding: 12px 14px;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.06);
+    }
+
+    .rate-pair {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #1e40af;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .rate-num {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--text);
+      margin-top: 4px;
+    }
+
+    .rate-meta {
+      font-size: 0.74rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* شارة الأجور والعمولات المحددة */
+    .fee-summary-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      background: #f0f9ff;
+      border: 1px dashed #0284c7;
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin: 12px 0;
+      font-size: 0.86rem;
+    }
+
+    /* الجداول والشارات */
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+
+    th, td {
+      padding: 11px 12px;
+      text-align: right;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    th {
+      background: var(--surface-2);
+      font-weight: 800;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .badge-success { background: var(--success-soft); color: var(--success); }
+    .badge-warning { background: var(--warning-soft); color: var(--warning); }
+    .badge-danger { background: var(--danger-soft); color: var(--danger); }
+    .badge-info { background: var(--accent-soft); color: var(--accent); }
+
+    .secret-pill {
+      font-family: monospace;
+      font-weight: 900;
+      background: #0f172a;
+      color: #38bdf8;
+      padding: 3px 8px;
+      border-radius: 8px;
+      letter-spacing: 1px;
+    }
+
+    /* النوافذ المنبثقة */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.58);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 100;
+    }
+
+    .modal-dialog {
+      width: 100%;
+      max-width: 620px;
+      max-height: 92vh;
+      overflow-y: auto;
+      background: var(--surface);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.3);
+      padding: 22px;
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-head h3 {
+      font-size: 1.08rem;
+      font-weight: 900;
+    }
+
+    /* إشعار الحوالة الرسمي (بدون أجور) */
+    .voucher-box {
+      border: 2px solid #0f172a;
+      border-radius: 16px;
+      padding: 18px;
+      background: #ffffff;
+      color: #0f172a;
+    }
+
+    .voucher-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+
+    .voucher-center-code {
+      text-align: center;
+      background: #f8fafc;
+      border: 1px dashed #94a3b8;
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 14px;
+    }
+
+    .voucher-center-code .v-num {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #1d4ed8;
+      letter-spacing: 1px;
+    }
+
+    .voucher-center-code .v-secret {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #059669;
+      letter-spacing: 3px;
+      margin: 2px 0;
+    }
+
+    .voucher-center-code .v-date {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .voucher-parties {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .voucher-party-box {
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: #fcfcfd;
+    }
+
+    .voucher-party-box .vp-title {
+      font-size: 0.76rem;
+      color: var(--muted);
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .voucher-party-box .vp-main {
+      font-weight: 900;
+      font-size: 0.94rem;
+    }
+
+    .voucher-party-box .vp-sub {
+      font-size: 0.8rem;
+      color: #334155;
+      margin-top: 2px;
+    }
+
+    .voucher-amount-banner {
+      text-align: center;
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #b91c1c;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 12px;
+      padding: 10px;
+      margin: 12px 0;
+    }
+
+    .voucher-office-footer {
+      border-top: 1px solid #cbd5e1;
+      padding-top: 10px;
+      font-size: 0.84rem;
+      color: #1e293b;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 200;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.28);
+    }
+
+    @media (max-width: 900px) {
+      .grid-3, .rates-box {
+        grid-template-columns: 1fr;
+      }
+      .grid-2, .voucher-parties, .form-grid-2, .form-grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #printArea, #printArea * {
+        visibility: visible;
+      }
+      #printArea {
+        position: fixed;
+        inset: 0;
+        background: #ffffff;
+        padding: 20px;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شاشة الدخول -->
+  <div id="authScreen" class="auth-wrapper">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="brand-emblem">
+          <div class="brand-logo-box" data-logo-slot></div>
+        </div>
+        <h1>ألعميد الدولي</h1>
+        <p>نظام إدارة الحوالات المالية والحسابات — العميد للتجارة</p>
+      </div>
+
+      <div class="role-switch">
+        <button type="button" class="role-tab active" id="tabAdmin" onclick="switchLoginRole('admin')">دخول الأدمن</button>
+        <button type="button" class="role-tab" id="tabClient" onclick="switchLoginRole('client')">دخول العميل</button>
+      </div>
+
+      <div id="adminLoginForm">
+        <div class="form-group">
+          <label class="form-label">اسم المستخدم أو البريد</label>
+          <input type="text" id="adminUser" class="form-control" value="admin@alamid.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">كلمة المرور</label>
+          <input type="password" id="adminPass" class="form-control" value="123456" />
+        </div>
+        <button type="button" class="btn btn-3d" style="width:100%" onclick="handleLogin('admin')">دخول إلى لوحة الإدارة</button>
+      </div>
+
+      <div id="clientLoginForm" class="hidden">
+        <div class="form-group">
+          <label class="form-label">اختر حساب العميل أو أدخل المعرف/البريد</label>
+          <select id="clientSelectQuick" class="form-control" style="margin-bottom:8px;" onchange="fillClientLoginQuick()"></select>
+          <input type="text" id="clientIdentifier" class="form-control" placeholder="مثال: CL-101 أو client1@alamid.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">كلمة المرور</label>
+          <input type="password" id="clientPass" class="form-control" placeholder="أدخل كلمة المرور" />
+        </div>
+        <button type="button" class="btn btn-accent" style="width:100%" onclick="handleLogin('client')">متابعة إلى التحقق الثنائي</button>
+      </div>
+
+      <div id="otpBox" class="hidden" style="margin-top:16px; padding-top:16px; border-top:1px solid var(--border);">
+        <div class="form-group">
+          <label class="form-label">رمز التحقق (OTP) — الرمز التجريبي السريع: <span id="demoOtpCode" class="badge badge-info"></span></label>
+          <input type="text" id="otpInput" class="form-control" maxlength="6" placeholder="أدخل رمز التحقق من 6 أرقام" />
+        </div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-success" style="flex:1" onclick="verifyOtpAndEnter()">تأكيد الدخول</button>
+          <button type="button" class="btn btn-soft" onclick="simulateBiometricLogin()">بصمة سريعة</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- التطبيق الرئيسي -->
+  <div id="appScreen" class="hidden">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand-emblem">
+          <div class="brand-logo-box" data-logo-slot></div>
+          <div class="topbar-title">
+            <h2>ألعميد الدولي <span class="badge badge-info" id="roleBadge"></span></h2>
+            <span id="activeUserMeta"></span>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <button type="button" class="btn btn-accent btn-sm" onclick="openFeeModal()">⚙️ أجور التحويل والعمولات</button>
+          <button type="button" class="btn btn-soft btn-sm" onclick="syncMarketRates()">🔄 تحديث البورصة</button>
+
+          <!-- جرس التنبيهات للأدمن -->
+          <div id="adminBellWrap" class="bell-wrapper hidden">
+            <button type="button" class="bell-btn" title="تنبيهات حركات العملاء" onclick="toggleNotificationsMenu()">
+              🔔
+              <span class="bell-badge" id="bellCount">0</span>
+            </button>
+            <div id="notifDropdown" class="notif-dropdown hidden">
+              <div class="notif-header">
+                <span>تنبيهات العملاء</span>
+                <button type="button" class="btn btn-soft btn-sm" onclick="markAllNotificationsRead()">تحديد الكل كمقروء</button>
+              </div>
+              <div id="notifList" class="notif-list"></div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-danger btn-sm" onclick="logout()">خروج</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="nav-pills" id="navPills"></div>
+
+      <!-- تبويب النظرة العامة -->
+      <section id="tab-overview" class="app-tab">
+        <div class="grid-3">
+          <div class="balance-card try">
+            <div class="balance-label">رصيد الليرة التركية (TRY ₺)</div>
+            <div class="balance-value" id="balTRY">0.00 ₺</div>
+            <div class="balance-sub" id="balTRYSub">الرصيد المتاح للتشغيل</div>
+          </div>
+          <div class="balance-card usd">
+            <div class="balance-label">رصيد الدولار الأمريكي (USD $)</div>
+            <div class="balance-value" id="balUSD">$0.00</div>
+            <div class="balance-sub" id="balUSDSub">الرصيد المتاح للتشغيل</div>
+          </div>
+          <div class="balance-card eur">
+            <div class="balance-label">رصيد اليورو (EUR €)</div>
+            <div class="balance-value" id="balEUR">€0.00</div>
+            <div class="balance-sub" id="balEURSub">الرصيد المتاح للتشغيل</div>
+          </div>
+        </div>
+
+        <!-- مربع أسعار الصرف البارز -->
+        <div class="card">
+          <div class="card-title">
+            <span>📈 أسعار الصرف المباشرة (بورصة المكتب مع هامش الربح)</span>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <span class="badge badge-success" id="marginBadge">هامش الربح: 0.00%</span>
+              <button type="button" class="btn btn-soft btn-sm" onclick="openRatesModal()">تعديل الأسعار والهامش</button>
+            </div>
+          </div>
+          <div class="rates-box" id="ratesBoxGrid"></div>
+          <div style="margin-top:10px; font-size:0.78rem; color:var(--muted);" id="ratesUpdatedAt"></div>
+        </div>
+
+        <!-- ملخص أجور التحويل وتقسيم الأرباح -->
+        <div class="fee-summary-strip">
+          <div>
+            <strong>إعدادات الأجور الحالية:</strong>
+            <span id="currentFeeSummaryText"></span>
+          </div>
+          <button type="button" class="btn btn-3d btn-sm" onclick="openFeeModal()">تخصيص الأجور والتقسيم</button>
+        </div>
+
+        <!-- بطاقات أرباح الأدمن أو بيانات مكتب العميل -->
+        <div id="adminProfitPanel" class="card hidden">
+          <div class="card-title"><span>💰 أرصدة الأرباح والعمولات المحققة</span></div>
+          <div class="grid-3" style="margin-bottom:0;">
+            <div class="rate-tile">
+              <div class="rate-pair">أرباح الإدارة (TRY)</div>
+              <div class="rate-num" id="profitAdminTRY">0.00 ₺</div>
+            </div>
+            <div class="rate-tile">
+              <div class="rate-pair">أرباح الإدارة (USD)</div>
+              <div class="rate-num" id="profitAdminUSD">$0.00</div>
+            </div>
+            <div class="rate-tile">
+              <div class="rate-pair">أرباح الإدارة (EUR)</div>
+              <div class="rate-num" id="profitAdminEUR">€0.00</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="clientOfficePanel" class="card hidden">
+          <div class="card-title"><span>🏢 بيانات مكتبي وعنواني المعتمد</span></div>
+          <div id="clientOfficeDetails" style="font-size:0.92rem; color:var(--text);"></div>
+        </div>
+      </section>
+
+      <!-- تبويب إرسال حوالة -->
+      <section id="tab-send" class="app-tab hidden">
+        <div class="card">
+          <div class="card-title">
+            <span>💸 إرسال حوالة جديدة (برمز سري من 6 أرقام)</span>
+            <button type="button" class="btn btn-soft btn-sm" onclick="openFeeModal()">تعديل الأجور والتقسيم</button>
+          </div>
+          <form id="sendTransferForm" onsubmit="submitSendTransfer(event)">
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">اسم المستفيد الكامل</label>
+                <input type="text" id="trRecipientName" class="form-control" required placeholder="مثال: أحمد محمود" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">رقم هاتف المستفيد / واتساب</label>
+                <input type="text" id="trRecipientPhone" class="form-control" placeholder="+90..." />
+              </div>
+            </div>
+
+            <div class="form-grid-3">
+              <div class="form-group">
+                <label class="form-label">العملة</label>
+                <select id="trCurrency" class="form-control" onchange="updateTransferCalcPreview()">
+                  <option value="USD">دولار أمريكي (USD $)</option>
+                  <option value="TRY">ليرة تركية (TRY ₺)</option>
+                  <option value="EUR">يورو (EUR €)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">مبلغ الحوالة</label>
+                <input type="number" step="0.01" min="0.01" id="trAmount" class="form-control" required oninput="updateTransferCalcPreview()" placeholder="0.00" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">مكتب التسليم / الوجهة</label>
+                <select id="trDeliveryOffice" class="form-control" onchange="updateTransferCalcPreview()"></select>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">عنوان مكتب التسليم أو ملاحظة الوجهة</label>
+                <input type="text" id="trDestinationAddress" class="form-control" placeholder="يُملأ تلقائياً عند اختيار مكتب مسجل أو اكتب العنوان" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">ملاحظات إضافية</label>
+                <input type="text" id="trNote" class="form-control" placeholder="ملاحظة اختيارية" />
+              </div>
+            </div>
+
+            <div class="fee-summary-strip" id="trCalcPreview"></div>
+
+            <button type="submit" class="btn btn-3d">إصدار الحوالة وتوليد الرمز السري</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- تبويب تحويل بين العملاء -->
+      <section id="tab-internal" class="app-tab hidden">
+        <div class="card">
+          <div class="card-title">
+            <span>🔁 تحويل داخلي بين العملاء (مع عرض عنوان المكتب)</span>
+            <button type="button" class="btn btn-soft btn-sm" onclick="openFeeModal()">تعديل الأجور والتقسيم</button>
+          </div>
+          <form id="internalTransferForm" onsubmit="submitInternalTransfer(event)">
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">العميل المستفيد (ابحث بالاسم أو الكود أو العنوان)</label>
+                <input type="text" id="intSearch" class="form-control" style="margin-bottom:8px;" placeholder="بحث سريع عن عميل أو عنوان مكتبه..." oninput="renderInternalClientOptions()" />
+                <select id="intTargetClient" class="form-control" onchange="showSelectedInternalClientInfo()"></select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">العملة والمبلغ</label>
+                <div class="form-grid-2" style="margin-bottom:0;">
+                  <select id="intCurrency" class="form-control" onchange="updateInternalCalcPreview()">
+                    <option value="USD">USD ($)</option>
+                    <option value="TRY">TRY (₺)</option>
+                    <option value="EUR">EUR (€)</option>
+                  </select>
+                  <input type="number" step="0.01" min="0.01" id="intAmount" class="form-control" required oninput="updateInternalCalcPreview()" placeholder="0.00" />
+                </div>
+              </div>
+            </div>
+
+            <div id="intSelectedClientCard" class="rate-tile" style="margin-bottom:14px;"></div>
+            <div class="fee-summary-strip" id="intCalcPreview"></div>
+
+            <button type="submit" class="btn btn-accent">تنفيذ التحويل الداخلي الفوري</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- تبويب سحب / تسليم حوالة برمز سري -->
+      <section id="tab-payout" class="app-tab hidden">
+        <div class="card">
+          <div class="card-title"><span>🔐 تسليم / سحب حوالة بالرمز السري (6 أرقام)</span></div>
+          <p style="font-size:0.86rem; color:var(--muted); margin-bottom:14px;">
+            لإتمام تسليم الحوالة وصرفها لدى مكتب المستلم، يجب إدخال رقم الحوالة والرمز السري الصحيح المكون من 6 أرقام.
+          </p>
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label class="form-label">رقم الحوالة</label>
+              <input type="text" id="payoutRefInput" class="form-control" placeholder="مثال: TRF-100001" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">الرمز السري (6 أرقام)</label>
+              <input type="text" id="payoutSecretInput" class="form-control" maxlength="6" placeholder="000000" />
+            </div>
+            <div class="form-group" style="display:flex; align-items:flex-end;">
+              <button type="button" class="btn btn-success" style="width:100%" onclick="processSecretPayout()">تحقق وتسليم الحوالة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span>الحوالات بانتظار التسليم</span></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>رقم الحوالة</th>
+                  <th>المرسل</th>
+                  <th>المستفيد</th>
+                  <th>المبلغ</th>
+                  <th>مكتب التسليم / العنوان</th>
+                  <th>الرمز السري</th>
+                  <th>إجراء</th>
+                </tr>
+              </thead>
+              <tbody id="pendingTransfersBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- تبويب السجلات وكشف الحساب -->
+      <section id="tab-ledger" class="app-tab hidden">
+        <div class="card">
+          <div class="card-title">
+            <span>📄 سجل الحوالات وكشف الحساب</span>
+            <input type="text" id="ledgerSearch" class="form-control" style="max-width:260px;" placeholder="بحث برقم الحوالة أو الاسم أو الرمز..." oninput="renderLedgerTable()" />
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>الرقم</th>
+                  <th>النوع</th>
+                  <th>الطرف الآخر / المكتب</th>
+                  <th>المبلغ</th>
+                  <th>الرمز السري</th>
+                  <th>الحالة</th>
+                  <th>التاريخ</th>
+                  <th>الإشعار</th>
+                </tr>
+              </thead>
+              <tbody id="ledgerTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- تبويب إدارة العملاء (أدمن) -->
+      <section id="tab-clients" class="app-tab hidden">
+        <div class="card">
+          <div class="card-title">
+            <span>👥 إدارة العملاء وعناوين المكاتب والأرصدة والصلاحيات</span>
+            <button type="button" class="btn btn-3d btn-sm" onclick="openClientModal()">+ إضافة عميل جديد</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>الكود</th>
+                  <th>الاسم والمكتب</th>
+                  <th>عنوان المكتب</th>
+                  <th>الأرصدة (TRY / USD / EUR)</th>
+                  <th>الصلاحيات</th>
+                  <th>الحالة</th>
+                  <th>إجراءات</th>
+                </tr>
+              </thead>
+              <tbody id="clientsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- تبويب إعدادات النظام والشعار (أدمن) -->
+      <section id="tab-settings" class="app-tab hidden">
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title"><span>🖼️ شعار وهوية العميد للتجارة</span></div>
+            <p style="font-size:0.84rem; color:var(--muted); margin-bottom:12px;">
+              الشعار الرسمي المدمج هو «العميد للتجارة»، ويمكنك هنا رفع صورة مخصصة لتحديث الشعار والرمز المظهري فوراً.
+            </p>
+            <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+              <div class="brand-logo-box" style="width:76px; height:76px;" data-logo-slot></div>
+              <div>
+                <input type="file" id="customLogoInput" accept="image/*" class="form-control" onchange="handleCustomLogoUpload(event)" />
+                <button type="button" class="btn btn-soft btn-sm" style="margin-top:8px;" onclick="resetDefaultLogo()">استعادة الشعار المدمج</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title"><span>⚖️ إدارة الأرصدة والعمليات النظامية</span></div>
+            <p style="font-size:0.84rem; color:var(--muted); margin-bottom:12px;">
+              جميع الأرصدة تبدأ مصفّرة (`0.00`) للتشغيل الفعلي. يمكنك شحن أو تعديل رصيد الإدارة من هنا أو تصفير كافة الأرصدة والحركات.
+            </p>
+            <div class="form-grid-3" style="margin-bottom:12px;">
+              <div>
+                <label class="form-label">رصيد إدارة TRY</label>
+                <input type="number" step="0.01" id="adminSetTRY" class="form-control" />
+              </div>
+              <div>
+                <label class="form-label">رصيد إدارة USD</label>
+                <input type="number" step="0.01" id="adminSetUSD" class="form-control" />
+              </div>
+              <div>
+                <label class="form-label">رصيد إدارة EUR</label>
+                <input type="number" step="0.01" id="adminSetEUR" class="form-control" />
+              </div>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button type="button" class="btn btn-success btn-sm" onclick="saveAdminBalances()">حفظ أرصدة الإدارة</button>
+              <button type="button" class="btn btn-danger btn-sm" onclick="zeroAllSystemBalances()">تصفير جميع الأرصدة والحركات</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- نافذة إعداد أجور التحويل وتقسيم الأرباح -->
+  <div id="feeModal" class="modal-backdrop hidden">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h3>⚙️ أجور التحويل وتقسيم الأرباح</h3>
+        <button type="button" class="btn btn-soft btn-sm" onclick="closeModal('feeModal')">✕</button>
+      </div>
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label">نوع الأجور على العميل</label>
+          <select id="feeModeInput" class="form-control" onchange="previewFeeModalSplit()">
+            <option value="percent">نسبة مئوية (%)</option>
+            <option value="fixed">مبلغ ثابت لكل حوالة</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">قيمة الأجور على العميل</label>
+          <input type="number" step="0.01" min="0" id="feeValueInput" class="form-control" oninput="previewFeeModalSplit()" />
+        </div>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label">هامش الربح لي — الإدارة (% من الأجور)</label>
+          <input type="number" step="0.1" min="0" max="100" id="adminShareInput" class="form-control" oninput="syncDeliveryShareFromAdmin()" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">حصة مكتب التسليم (% من الأجور)</label>
+          <input type="number" step="0.1" min="0" max="100" id="deliveryShareInput" class="form-control" oninput="syncAdminShareFromDelivery()" />
+        </div>
+      </div>
+
+      <div class="fee-summary-strip" id="feeModalPreviewBox"></div>
+
+      <div style="display:flex; justify-content:flex-end; gap:10px;">
+        <button type="button" class="btn btn-soft" onclick="closeModal('feeModal')">إلغاء</button>
+        <button type="button" class="btn btn-3d" onclick="saveFeeSettings()">حفظ إعدادات الأجور</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- نافذة تعديل أسعار الصرف وهامش المكتب -->
+  <div id="ratesModal" class="modal-backdrop hidden">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h3>📈 أسعار الصرف وهامش ربح المكتب</h3>
+        <button type="button" class="btn btn-soft btn-sm" onclick="closeModal('ratesModal')">✕</button>
+      </div>
+      <div class="form-grid-3">
+        <div class="form-group">
+          <label class="form-label">سعر USD مقابل TRY</label>
+          <input type="number" step="0.0001" id="rateUsdTryInput" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">سعر EUR مقابل TRY</label>
+          <input type="number" step="0.0001" id="rateEurTryInput" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">سعر EUR مقابل USD</label>
+          <input type="number" step="0.0001" id="rateEurUsdInput" class="form-control" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">هامش ربح المكتب في الصرف (%)</label>
+        <input type="number" step="0.05" min="0" max="50" id="officeMarginInput" class="form-control" />
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:10px;">
+        <button type="button" class="btn btn-soft" onclick="closeModal('ratesModal')">إلغاء</button>
+        <button type="button" class="btn btn-accent" onclick="saveRatesSettings()">حفظ الأسعار والهامش</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- نافذة إضافة / تعديل عميل -->
+  <div id="clientModal" class="modal-backdrop hidden">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h3 id="clientModalTitle">إضافة عميل جديد</h3>
+        <button type="button" class="btn btn-soft btn-sm" onclick="closeModal('clientModal')">✕</button>
+      </div>
+      <input type="hidden" id="editClientId" />
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label">اسم العميل / اسم المكتب</label>
+          <input type="text" id="clName" class="form-control" required placeholder="مثال: مكتب العميد - غونشلي" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">البريد الإلكتروني أو الهاتف</label>
+          <input type="text" id="clContact" class="form-control" placeholder="client@alamid.com" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">عنوان مكتب العميل (يظهر للجميع عند البحث والاختيار)</label>
+        <input type="text" id="clAddress" class="form-control" placeholder="مثال: تركيا - إسطنبول - غونشلي - شارع 15 تموز..." />
+      </div>
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label">كلمة مرور العميل</label>
+          <input type="text" id="clPass" class="form-control" value="1234" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">حالة الحساب</label>
+          <select id="clStatus" class="form-control">
+            <option value="active">نشط</option>
+            <option value="suspended">موقوف</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-grid-3">
+        <div class="form-group">
+          <label class="form-label">رصيد TRY</label>
+          <input type="number" step="0.01" id="clBalTRY" class="form-control" value="0" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">رصيد USD</label>
+          <input type="number" step="0.01" id="clBalUSD" class="form-control" value="0" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">رصيد EUR</label>
+          <input type="number" step="0.01" id="clBalEUR" class="form-control" value="0" />
+        </div>
+      </div>
+      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px; font-size:0.88rem; font-weight:700;">
+        <label><input type="checkbox" id="clCanSend" checked /> إرسال حوالات</label>
+        <label><input type="checkbox" id="clCanInternal" checked /> تحويل بين العملاء</label>
+        <label><input type="checkbox" id="clCanPayout" checked /> تسليم بالرمز السري</label>
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:10px;">
+        <button type="button" class="btn btn-soft" onclick="closeModal('clientModal')">إلغاء</button>
+        <button type="button" class="btn btn-3d" onclick="saveClientFromModal()">حفظ العميل</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- نافذة إشعار الحوالة الرسمي (بدون أجور + مشاركة واتساب + نسخ + طباعة) -->
+  <div id="voucherModal" class="modal-backdrop hidden">
+    <div class="modal-dialog">
+      <div class="modal-head no-print">
+        <h3>🧾 إشعار حوالة رسمي — ألعميد الدولي</h3>
+        <button type="button" class="btn btn-soft btn-sm" onclick="closeModal('voucherModal')">✕</button>
+      </div>
+
+      <div id="printArea">
+        <div id="voucherContent" class="voucher-box"></div>
+      </div>
+
+      <div class="no-print" style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; justify-content:space-between;">
+        <button type="button" class="btn btn-success" onclick="shareVoucherWhatsApp()">📲 مشاركة على واتساب</button>
+        <button type="button" class="btn btn-accent" onclick="copyVoucherText()">📋 نسخ نص الإشعار</button>
+        <button type="button" class="btn btn-3d" onclick="window.print()">🖨️ طباعة الإشعار</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastEl" class="toast hidden"></div>
+
+  <script>
+    const STORAGE_KEY = 'al_amid_intl_v1_clean';
+    const DEFAULT_LOGO_SVG = `
+      <div class="brand-svg-mark">
+        <span class="ring-mini">• العميد للتجارة •</span>
+        <span class="main-word">العميد</span>
+        <span class="sub-word">للتجارة</span>
+      </div>`;
+
+    const CURRENCY_META = {
+      TRY: { symbol: '₺', name: 'ليرة تركية' },
+      USD: { symbol: '$', name: 'دولار أمريكي' },
+      EUR: { symbol: '€', name: 'يورو' }
+    };
+
+    function createInitialState() {
+      return {
+        logoDataUrl: '',
+        admin: {
+          name: 'ألعميد الدولي (الإدارة)',
+          email: 'admin@alamid.com',
+          password: '123456',
+          balances: { TRY: 0, USD: 0, EUR: 0 },
+          profits: { TRY: 0, USD: 0, EUR: 0 }
+        },
+        clients: [
+          {
+            id: 'CL-101',
+            name: 'مكتب العميد - غونشلي',
+            contact: 'client1@alamid.com',
+            address: 'تركيا - إسطنبول - غونشلي - شارع 15 تموز',
+            password: '1234',
+            status: 'active',
+            balances: { TRY: 0, USD: 0, EUR: 0 },
+            permissions: { canSend: true, canInternal: true, canPayout: true }
+          },
+          {
+            id: 'CL-102',
+            name: 'مكتب العميد - الفاتح',
+            contact: 'client2@alamid.com',
+            address: 'تركيا - إسطنبول - الفاتح - أكسراي',
+            password: '1234',
+            status: 'active',
+            balances: { TRY: 0, USD: 0, EUR: 0 },
+            permissions: { canSend: true, canInternal: true, canPayout: true }
+          }
+        ],
+        rates: {
+          USD_TRY: 34.85,
+          EUR_TRY: 37.60,
+          EUR_USD: 1.08,
+          marginPercent: 0,
+          updatedAt: new Date().toLocaleString('ar-EG')
+        },
+        fees: {
+          mode: 'percent', // 'percent' | 'fixed'
+          value: 0,
+          adminSharePercent: 70,
+          deliverySharePercent: 30
+        },
+        transactions: [],
+        notifications: [],
+        seq: 100001
+      };
+    }
+
+    let state = loadState();
+    let session = { role: null, clientId: null, pendingRole: null, pendingClientId: null, pendingOtp: null };
+    let activeTab = 'overview';
+    let currentVoucherTx = null;
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          return Object.assign(createInitialState(), parsed);
+        }
+      } catch (e) {}
+      const initial = createInitialState();
+      saveState(initial);
+      return initial;
+    }
+
+    function saveState(st = state) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(st));
+    }
+
+    function fmtMoney(amount, currency) {
+      const num = Number(amount || 0);
+      const sym = CURRENCY_META[currency]?.symbol || '';
+      if (currency === 'USD') return `${sym}${num.toFixed(2)}`;
+      return `${num.toFixed(2)} ${sym}`;
+    }
+
+    function showToast(msg) {
+      const el = document.getElementById('toastEl');
+      el.textContent = msg;
+      el.classList.remove('hidden');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => el.classList.add('hidden'), 3200);
+    }
+
+    function renderBrandLogos() {
+      document.querySelectorAll('[data-logo-slot]').forEach((box) => {
+        if (state.logoDataUrl) {
+          box.innerHTML = `<img src="${state.logoDataUrl}" alt="العميد للتجارة" />`;
+        } else {
+          box.innerHTML = DEFAULT_LOGO_SVG;
+        }
+      });
+    }
+
+    function handleCustomLogoUpload(ev) {
+      const file = ev.target.files?.[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        state.logoDataUrl = reader.result;
+        saveState();
+        renderBrandLogos();
+        showToast('تم تحديث شعار العميد للتجارة');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function resetDefaultLogo() {
+      state.logoDataUrl = '';
+      saveState();
+      renderBrandLogos();
+      showToast('تمت استعادة الشعار المدمج');
+    }
+
+    function switchLoginRole(role) {
+      document.getElementById('tabAdmin').classList.toggle('active', role === 'admin');
+      document.getElementById('tabClient').classList.toggle('active', role === 'client');
+      document.getElementById('adminLoginForm').classList.toggle('hidden', role !== 'admin');
+      document.getElementById('clientLoginForm').classList.toggle('hidden', role !== 'client');
+      document.getElementById('otpBox').classList.add('hidden');
+      if (role === 'client') populateQuickClientSelect();
+    }
+
+    function populateQuickClientSelect() {
+      const sel = document.getElementById('clientSelectQuick');
+      sel.innerHTML = '<option value="">-- اختر عميلاً للملء السريع --</option>' +
+        state.clients.map((c) => `<option value="${c.id}">${c.name} (${c.id})</option>`).join('');
+    }
+
+    function fillClientLoginQuick() {
+      const id = document.getElementById('clientSelectQuick').value;
+      const cl = state.clients.find((x) => x.id === id);
+      if (cl) {
+        document.getElementById('clientIdentifier').value = cl.id;
+        document.getElementById('clientPass').value = cl.password;
+      }
+    }
+
+    function handleLogin(role) {
+      if (role === 'admin') {
+        const u = document.getElementById('adminUser').value.trim();
+        const p = document.getElementById('adminPass').value;
+        if (u === state.admin.email && p === state.admin.password) {
+          session = { role: 'admin', clientId: null };
+          enterApp();
+        } else {
+          showToast('بيانات دخول الأدمن غير صحيحة');
+        }
+        return;
+      }
+
+      const ident = document.getElementById('clientIdentifier').value.trim();
+      const pass = document.getElementById('clientPass').value;
+      const cl = state.clients.find(
+        (c) => (c.id.toLowerCase() === ident.toLowerCase() || c.contact.toLowerCase() === ident.toLowerCase() || c.name.includes(ident)) && c.password === pass
+      );
+      if (!cl) {
+        showToast('بيانات العميل غير صحيحة');
+        return;
+      }
+      if (cl.status !== 'active') {
+        showToast('هذا الحساب موقوف حالياً');
+        return;
+      }
+
+      const otp = String(Math.floor(100000 + Math.random() * 900000));
+      session.pendingRole = 'client';
+      session.pendingClientId = cl.id;
+      session.pendingOtp = otp;
+      document.getElementById('demoOtpCode').textContent = otp;
+      document.getElementById('otpInput').value = otp;
+      document.getElementById('otpBox').classList.remove('hidden');
+      showToast('تم إرسال رمز التحقق الثنائي');
+    }
+
+    function verifyOtpAndEnter() {
+      const code = document.getElementById('otpInput').value.trim();
+      if (code !== session.pendingOtp) {
+        showToast('رمز التحقق غير صحيح');
+        return;
+      }
+      session = { role: 'client', clientId: session.pendingClientId };
+      enterApp();
+    }
+
+    function simulateBiometricLogin() {
+      if (!session.pendingClientId) return;
+      session = { role: 'client', clientId: session.pendingClientId };
+      enterApp();
+    }
+
+    function logout() {
+      session = { role: null, clientId: null };
+      document.getElementById('appScreen').classList.add('hidden');
+      document.getElementById('authScreen').classList.remove('hidden');
+      document.getElementById('otpBox').classList.add('hidden');
+    }
+
+    function getCurrentClient() {
+      if (session.role !== 'client') return null;
+      return state.clients.find((c) => c.id === session.clientId) || null;
+    }
+
+    function getActiveBalances() {
+      if (session.role === 'admin') return state.admin.balances;
+      const cl = getCurrentClient();
+      return cl ? cl.balances : { TRY: 0, USD: 0, EUR: 0 };
+    }
+
+    function enterApp() {
+      document.getElementById('authScreen').classList.add('hidden');
+      document.getElementById('appScreen').classList.remove('hidden');
+      activeTab = 'overview';
+      renderTopbarAndNav();
+      refreshAllViews();
+    }
+
+    function renderTopbarAndNav() {
+      const isAdmin = session.role === 'admin';
+      const cl = getCurrentClient();
+
+      document.getElementById('roleBadge').textContent = isAdmin ? 'أدمن' : 'عميل';
+      document.getElementById('activeUserMeta').textContent = isAdmin
+        ? state.admin.name
+        : `${cl.name} (${cl.id}) — ${cl.address || 'لم يحدد العنوان'}`;
+
+      document.getElementById('adminBellWrap').classList.toggle('hidden', !isAdmin);
+      document.getElementById('adminProfitPanel').classList.toggle('hidden', !isAdmin);
+      document.getElementById('clientOfficePanel').classList.toggle('hidden', isAdmin);
+
+      const pills = [
+        { id: 'overview', label: '📊 النظرة العامة', show: true },
+        { id: 'send', label: '💸 إرسال حوالة', show: isAdmin || cl?.permissions?.canSend },
+        { id: 'internal', label: '🔁 تحويل بين العملاء', show: isAdmin || cl?.permissions?.canInternal },
+        { id: 'payout', label: '🔐 تسليم بالرمز السري', show: isAdmin || cl?.permissions?.canPayout },
+        { id: 'ledger', label: '📄 السجلات وكشف الحساب', show: true },
+        { id: 'clients', label: '👥 العملاء والعناوين', show: isAdmin },
+        { id: 'settings', label: '⚙️ الإعدادات والشعار', show: isAdmin }
+      ].filter((p) => p.show);
+
+      const navEl = document.getElementById('navPills');
+      navEl.innerHTML = pills.map((p) =>
+        `<button type="button" class="nav-pill ${activeTab === p.id ? 'active' : ''}" onclick="switchTab('${p.id}')">${p.label}</button>`
+      ).join('');
+
+      document.querySelectorAll('.app-tab').forEach((sec) => {
+        sec.classList.toggle('hidden', sec.id !== `tab-${activeTab}`);
+      });
+    }
+
+    function switchTab(tabId) {
+      activeTab = tabId;
+      renderTopbarAndNav();
+      refreshAllViews();
+    }
+
+    function refreshAllViews() {
+      renderBrandLogos();
+      const bal = getActiveBalances();
+      document.getElementById('balTRY').textContent = fmtMoney(bal.TRY, 'TRY');
+      document.getElementById('balUSD').textContent = fmtMoney(bal.USD, 'USD');
+      document.getElementById('balEUR').textContent = fmtMoney(bal.EUR, 'EUR');
+
+      if (session.role === 'admin') {
+        document.getElementById('profitAdminTRY').textContent = fmtMoney(state.admin.profits.TRY, 'TRY');
+        document.getElementById('profitAdminUSD').textContent = fmtMoney(state.admin.profits.USD, 'USD');
+        document.getElementById('profitAdminEUR').textContent = fmtMoney(state.admin.profits.EUR, 'EUR');
+        document.getElementById('adminSetTRY').value = state.admin.balances.TRY;
+        document.getElementById('adminSetUSD').value = state.admin.balances.USD;
+        document.getElementById('adminSetEUR').value = state.admin.balances.EUR;
+      } else {
+        const cl = getCurrentClient();
+        document.getElementById('clientOfficeDetails').innerHTML = `
+          <div><strong>اسم المكتب / العميل:</strong> ${cl.name} (${cl.id})</div>
+          <div style="margin-top:6px;"><strong>عنوان المكتب:</strong> ${cl.address || 'غير محدد'}</div>
+          <div style="margin-top:6px;"><strong>وسيلة التواصل:</strong> ${cl.contact || '—'}</div>
+        `;
+      }
+
+      renderRatesBox();
+      renderFeeSummary();
+      populateDeliveryOffices();
+      renderInternalClientOptions();
+      showSelectedInternalClientInfo();
+      updateTransferCalcPreview();
+      updateInternalCalcPreview();
+      renderPendingTransfers();
+      renderLedgerTable();
+      renderClientsTable();
+      renderNotifications();
+    }
+
+    function getEffectiveRate(baseRate) {
+      const m = Number(state.rates.marginPercent || 0) / 100;
+      return Number(baseRate || 0) * (1 + m);
+    }
+
+    function renderRatesBox() {
+      const usdTry = getEffectiveRate(state.rates.USD_TRY);
+      const eurTry = getEffectiveRate(state.rates.EUR_TRY);
+      const eurUsd = getEffectiveRate(state.rates.EUR_USD);
+      document.getElementById('marginBadge').textContent = `هامش الربح: ${Number(state.rates.marginPercent || 0).toFixed(2)}%`;
+      document.getElementById('ratesBoxGrid').innerHTML = `
+        <div class="rate-tile">
+          <div class="rate-pair"><span>USD / TRY</span><span class="badge badge-info">دولار ← ليرة</span></div>
+          <div class="rate-num">${usdTry.toFixed(4)} ₺</div>
+          <div class="rate-meta">السعر الأساسي: ${Number(state.rates.USD_TRY).toFixed(4)}</div>
+        </div>
+        <div class="rate-tile">
+          <div class="rate-pair"><span>EUR / TRY</span><span class="badge badge-info">يورو ← ليرة</span></div>
+          <div class="rate-num">${eurTry.toFixed(4)} ₺</div>
+          <div class="rate-meta">السعر الأساسي: ${Number(state.rates.EUR_TRY).toFixed(4)}</div>
+        </div>
+        <div class="rate-tile">
+          <div class="rate-pair"><span>EUR / USD</span><span class="badge badge-info">يورو ← دولار</span></div>
+          <div class="rate-num">$${eurUsd.toFixed(4)}</div>
+          <div class="rate-meta">السعر الأساسي: ${Number(state.rates.EUR_USD).toFixed(4)}</div>
+        </div>
+      `;
+      document.getElementById('ratesUpdatedAt').textContent = `آخر تحديث لأسعار الصرف: ${state.rates.updatedAt || '—'}`;
+    }
+
+    function syncMarketRates() {
+      const jitter = () => (Math.random() - 0.5) * 0.14;
+      state.rates.USD_TRY = Number(Math.max(25, state.rates.USD_TRY + jitter()).toFixed(4));
+      state.rates.EUR_TRY = Number(Math.max(28, state.rates.EUR_TRY + jitter() * 1.1).toFixed(4));
+      state.rates.EUR_USD = Number((state.rates.EUR_TRY / state.rates.USD_TRY).toFixed(4));
+      state.rates.updatedAt = new Date().toLocaleString('ar-EG');
+      saveState();
+      renderRatesBox();
+      showToast('تم تحديث أسعار الصرف');
+    }
+
+    function openRatesModal() {
+      if (session.role !== 'admin') {
+        showToast('تعديل أسعار الصرف والهامش متاح للأدمن');
+        return;
+      }
+      document.getElementById('rateUsdTryInput').value = state.rates.USD_TRY;
+      document.getElementById('rateEurTryInput').value = state.rates.EUR_TRY;
+      document.getElementById('rateEurUsdInput').value = state.rates.EUR_USD;
+      document.getElementById('officeMarginInput').value = state.rates.marginPercent;
+      document.getElementById('ratesModal').classList.remove('hidden');
+    }
+
+    function saveRatesSettings() {
+      state.rates.USD_TRY = Number(document.getElementById('rateUsdTryInput').value || state.rates.USD_TRY);
+      state.rates.EUR_TRY = Number(document.getElementById('rateEurTryInput').value || state.rates.EUR_TRY);
+      state.rates.EUR_USD = Number(document.getElementById('rateEurUsdInput').value || state.rates.EUR_USD);
+      state.rates.marginPercent = Number(document.getElementById('officeMarginInput').value || 0);
+      state.rates.updatedAt = new Date().toLocaleString('ar-EG');
+      saveState();
+      closeModal('ratesModal');
+      renderRatesBox();
+      showToast('تم حفظ أسعار الصرف وهامش الربح');
+    }
+
+    function computeFeeBreakdown(amount, currency) {
+      const amt = Number(amount || 0);
+      if (amt <= 0) return { fee: 0, adminShare: 0, deliveryShare: 0, total: 0 };
+      const fee = state.fees.mode === 'percent'
+        ? (amt * Number(state.fees.value || 0)) / 100
+        : Number(state.fees.value || 0);
+      const adminShare = (fee * Number(state.fees.adminSharePercent || 0)) / 100;
+      const deliveryShare = Math.max(0, fee - adminShare);
+      return { fee, adminShare, deliveryShare, total: amt + fee };
+    }
+
+    function renderFeeSummary() {
+      const feeDesc = state.fees.mode === 'percent'
+        ? `${Number(state.fees.value || 0).toFixed(2)}% من المبلغ`
+        : `${Number(state.fees.value || 0).toFixed(2)} مبلغ ثابت`;
+      document.getElementById('currentFeeSummaryText').textContent =
+        `أجور العميل: ${feeDesc} | هامش الربح لي (الإدارة): ${Number(state.fees.adminSharePercent || 0).toFixed(1)}% | حصة مكتب التسليم: ${Number(state.fees.deliverySharePercent || 0).toFixed(1)}%`;
+    }
+
+    function openFeeModal() {
+      document.getElementById('feeModeInput').value = state.fees.mode;
+      document.getElementById('feeValueInput').value = state.fees.value;
+      document.getElementById('adminShareInput').value = state.fees.adminSharePercent;
+      document.getElementById('deliveryShareInput').value = state.fees.deliverySharePercent;
+      previewFeeModalSplit();
+      document.getElementById('feeModal').classList.remove('hidden');
+    }
+
+    function syncDeliveryShareFromAdmin() {
+      const adm = Math.min(100, Math.max(0, Number(document.getElementById('adminShareInput').value || 0)));
+      document.getElementById('deliveryShareInput').value = Number((100 - adm).toFixed(1));
+      previewFeeModalSplit();
+    }
+
+    function syncAdminShareFromDelivery() {
+      const del = Math.min(100, Math.max(0, Number(document.getElementById('deliveryShareInput').value || 0)));
+      document.getElementById('adminShareInput').value = Number((100 - del).toFixed(1));
+      previewFeeModalSplit();
+    }
+
+    function previewFeeModalSplit() {
+      const sample = computeFeeBreakdown(100, 'USD');
+      document.getElementById('feeModalPreviewBox').innerHTML = `
+        <span>مثال على حوالة 100$: الأجور = <strong>$${sample.fee.toFixed(2)}</strong></span>
+        <span>هامش الربح لي: <strong>$${sample.adminShare.toFixed(2)}</strong></span>
+        <span>مكتب التسليم: <strong>$${sample.deliveryShare.toFixed(2)}</strong></span>
+      `;
+    }
+
+    function saveFeeSettings() {
+      state.fees.mode = document.getElementById('feeModeInput').value;
+      state.fees.value = Math.max(0, Number(document.getElementById('feeValueInput').value || 0));
+      state.fees.adminSharePercent = Math.min(100, Math.max(0, Number(document.getElementById('adminShareInput').value || 0)));
+      state.fees.deliverySharePercent = Number((100 - state.fees.adminSharePercent).toFixed(1));
+      saveState();
+      closeModal('feeModal');
+      refreshAllViews();
+      showToast('تم حفظ إعدادات أجور التحويل وتقسيم الأرباح');
+    }
+
+    function populateDeliveryOffices() {
+      const sel = document.getElementById('trDeliveryOffice');
+      if (!sel) return;
+      sel.innerHTML = '<option value="">مكتب / وجهة حرة</option>' +
+        state.clients.map((c) => `<option value="${c.id}" data-address="${c.address || ''}">${c.name} (${c.id})</option>`).join('');
+      sel.onchange = () => {
+        const opt = sel.selectedOptions[0];
+        const addr = opt?.dataset?.address || '';
+        if (addr) document.getElementById('trDestinationAddress').value = addr;
+        updateTransferCalcPreview();
+      };
+    }
+
+    function updateTransferCalcPreview() {
+      const cur = document.getElementById('trCurrency')?.value || 'USD';
+      const amt = Number(document.getElementById('trAmount')?.value || 0);
+      const bk = computeFeeBreakdown(amt, cur);
+      const el = document.getElementById('trCalcPreview');
+      if (!el) return;
+      el.innerHTML = `
+        <span>الأجور: <strong>${fmtMoney(bk.fee, cur)}</strong></span>
+        <span>هامش الربح لي: <strong>${fmtMoney(bk.adminShare, cur)}</strong></span>
+        <span>مكتب التسليم: <strong>${fmtMoney(bk.deliveryShare, cur)}</strong></span>
+        <span>الإجمالي المطلوب: <strong>${fmtMoney(bk.total, cur)}</strong></span>
+      `;
+    }
+
+    function generateSecret6() {
+      return String(Math.floor(100000 + Math.random() * 900000));
+    }
+
+    function pushAdminNotification(message) {
+      state.notifications.unshift({
+        id: 'NTF-' + Date.now() + '-' + Math.floor(Math.random() * 100),
+        message,
+        time: new Date().toLocaleString('ar-EG'),
+        read: false
+      });
+    }
+
+    function submitSendTransfer(e) {
+      e.preventDefault();
+      const recipientName = document.getElementById('trRecipientName').value.trim();
+      const recipientPhone = document.getElementById('trRecipientPhone').value.trim();
+      const currency = document.getElementById('trCurrency').value;
+      const amount = Number(document.getElementById('trAmount').value || 0);
+      const officeId = document.getElementById('trDeliveryOffice').value;
+      const destAddress = document.getElementById('trDestinationAddress').value.trim();
+      const note = document.getElementById('trNote').value.trim();
+
+      if (!recipientName || amount <= 0) return;
+
+      const bk = computeFeeBreakdown(amount, currency);
+      const senderBal = getActiveBalances();
+      if (Number(senderBal[currency] || 0) < bk.total) {
+        showToast('الرصيد غير كافٍ لتغطية المبلغ والأجور');
+        return;
+      }
+
+      senderBal[currency] = Number((senderBal[currency] - bk.total).toFixed(2));
+      state.admin.profits[currency] = Number((state.admin.profits[currency] + bk.adminShare).toFixed(2));
+
+      const targetClient = state.clients.find((c) => c.id === officeId);
+      if (targetClient && bk.deliveryShare > 0) {
+        targetClient.balances[currency] = Number((targetClient.balances[currency] + bk.deliveryShare).toFixed(2));
+      } else if (bk.deliveryShare > 0) {
+        state.admin.profits[currency] = Number((state.admin.profits[currency] + bk.deliveryShare).toFixed(2));
+      }
+
+      const refNumber = 'TRF-' + (state.seq++);
+      const secretCode = generateSecret6();
+      const senderName = session.role === 'admin' ? state.admin.name : `${getCurrentClient().name} (${getCurrentClient().id})`;
+      const senderAddress = session.role === 'admin' ? 'الإدارة العامة — ألعميد الدولي' : (getCurrentClient().address || '—');
+      const officeLabel = targetClient ? `${targetClient.name} — ${targetClient.address || ''}` : (destAddress || 'مكتب التسليم');
+
+      const tx = {
+        id: refNumber,
+        type: 'transfer_out',
+        typeLabel: 'حوالة صادرة',
+        senderName,
+        senderAddress,
+        recipientName,
+        recipientPhone,
+        deliveryOfficeId: officeId || '',
+        deliveryOfficeName: targetClient ? targetClient.name : 'مكتب التسليم',
+        destinationAddress: destAddress || (targetClient?.address || ''),
+        officeLabel,
+        currency,
+        amount,
+        fee: bk.fee,
+        adminShare: bk.adminShare,
+        deliveryShare: bk.deliveryShare,
+        secretCode,
+        status: 'pending',
+        note,
+        ownerRole: session.role,
+        ownerClientId: session.clientId || null,
+        createdAt: new Date().toLocaleString('ar-EG')
+      };
+
+      state.transactions.unshift(tx);
+      if (session.role === 'client') {
+        pushAdminNotification(`قام العميل ${senderName} بإرسال حوالة ${refNumber} بقيمة ${fmtMoney(amount, currency)} إلى ${recipientName}`);
+      }
+
+      saveState();
+      document.getElementById('sendTransferForm').reset();
+      refreshAllViews();
+      openVoucherModal(tx.id);
+      showToast(`تم إصدار الحوالة ${refNumber} — الرمز السري: ${secretCode}`);
+    }
+
+    function renderInternalClientOptions() {
+      const q = (document.getElementById('intSearch')?.value || '').trim().toLowerCase();
+      const sel = document.getElementById('intTargetClient');
+      if (!sel) return;
+      const list = state.clients.filter((c) => {
+        if (session.role === 'client' && c.id === session.clientId) return false;
+        if (!q) return true;
+        return (c.name || '').toLowerCase().includes(q) ||
+               (c.id || '').toLowerCase().includes(q) ||
+               (c.address || '').toLowerCase().includes(q);
+      });
+
+      if (!list.length) {
+        sel.innerHTML = '<option value="">لا يوجد عملاء مطابقون</option>';
+      } else {
+        sel.innerHTML = list.map((c) =>
+          `<option value="${c.id}">${c.name} (${c.id}) — ${c.address || 'بدون عنوان'}</option>`
+        ).join('');
+      }
+      showSelectedInternalClientInfo();
+    }
+
+    function showSelectedInternalClientInfo() {
+      const id = document.getElementById('intTargetClient')?.value;
+      const box = document.getElementById('intSelectedClientCard');
+      if (!box) return;
+      const cl = state.clients.find((x) => x.id === id);
+      if (!cl) {
+        box.innerHTML = '<div style="color:var(--muted); font-size:0.85rem;">اختر عميلاً لعرض بيانات مكتبه وعنوانه.</div>';
+        return;
+      }
+      box.innerHTML = `
+        <div style="font-weight:900; font-size:0.95rem;">🏢 ${cl.name} <span class="badge badge-info">${cl.id}</span></div>
+        <div style="font-size:0.84rem; color:#334155; margin-top:4px;"><strong>عنوان المكتب:</strong> ${cl.address || 'غير محدد'}</div>
+      `;
+    }
+
+    function updateInternalCalcPreview() {
+      const cur = document.getElementById('intCurrency')?.value || 'USD';
+      const amt = Number(document.getElementById('intAmount')?.value || 0);
+      const bk = computeFeeBreakdown(amt, cur);
+      const el = document.getElementById('intCalcPreview');
+      if (!el) return;
+      el.innerHTML = `
+        <span>الأجور: <strong>${fmtMoney(bk.fee, cur)}</strong></span>
+        <span>هامش الربح لي: <strong>${fmtMoney(bk.adminShare, cur)}</strong></span>
+        <span>حصة المكتب: <strong>${fmtMoney(bk.deliveryShare, cur)}</strong></span>
+        <span>الإجمالي: <strong>${fmtMoney(bk.total, cur)}</strong></span>
+      `;
+    }
+
+    function submitInternalTransfer(e) {
+      e.preventDefault();
+      const targetId = document.getElementById('intTargetClient').value;
+      const currency = document.getElementById('intCurrency').value;
+      const amount = Number(document.getElementById('intAmount').value || 0);
+      const targetClient = state.clients.find((c) => c.id === targetId);
+
+      if (!targetClient || amount <= 0) {
+        showToast('يرجى اختيار العميل المستفيد وإدخال مبلغ صحيح');
+        return;
+      }
+
+      const bk = computeFeeBreakdown(amount, currency);
+      const senderBal = getActiveBalances();
+      if (Number(senderBal[currency] || 0) < bk.total) {
+        showToast('الرصيد غير كافٍ لإتمام التحويل الداخلي');
+        return;
+      }
+
+      senderBal[currency] = Number((senderBal[currency] - bk.total).toFixed(2));
+      targetClient.balances[currency] = Number((targetClient.balances[currency] + amount + bk.deliveryShare).toFixed(2));
+      state.admin.profits[currency] = Number((state.admin.profits[currency] + bk.adminShare).toFixed(2));
+
+      const refNumber = 'INT-' + (state.seq++);
+      const secretCode = generateSecret6();
+      const senderName = session.role === 'admin' ? state.admin.name : `${getCurrentClient().name} (${getCurrentClient().id})`;
+      const senderAddress = session.role === 'admin' ? 'الإدارة العامة — ألعميد الدولي' : (getCurrentClient().address || '—');
+
+      const tx = {
+        id: refNumber,
+        type: 'internal',
+        typeLabel: 'تحويل داخلي بين العملاء',
+        senderName,
+        senderAddress,
+        recipientName: `${targetClient.name} (${targetClient.id})`,
+        recipientPhone: targetClient.contact || '',
+        deliveryOfficeId: targetClient.id,
+        deliveryOfficeName: targetClient.name,
+        destinationAddress: targetClient.address || '',
+        officeLabel: `${targetClient.name} — ${targetClient.address || ''}`,
+        currency,
+        amount,
+        fee: bk.fee,
+        adminShare: bk.adminShare,
+        deliveryShare: bk.deliveryShare,
+        secretCode,
+        status: 'completed',
+        ownerRole: session.role,
+        ownerClientId: session.clientId || null,
+        targetClientId: targetClient.id,
+        createdAt: new Date().toLocaleString('ar-EG')
+      };
+
+      state.transactions.unshift(tx);
+      if (session.role === 'client') {
+        pushAdminNotification(`تحويل داخلي من ${senderName} إلى ${targetClient.name} بقيمة ${fmtMoney(amount, currency)}`);
+      }
+
+      saveState();
+      document.getElementById('intAmount').value = '';
+      refreshAllViews();
+      openVoucherModal(tx.id);
+      showToast(`تم التحويل إلى ${targetClient.name} بنجاح`);
+    }
+
+    function renderPendingTransfers() {
+      const tbody = document.getElementById('pendingTransfersBody');
+      if (!tbody) return;
+      const list = state.transactions.filter((t) => t.status === 'pending');
+      if (!list.length) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; color:var(--muted);">لا توجد حوالات بانتظار التسليم حالياً</td></tr>';
+        return;
+      }
+      tbody.innerHTML = list.map((t) => `
+        <tr>
+          <td><strong>${t.id}</strong></td>
+          <td>${t.senderName}</td>
+          <td>${t.recipientName}</td>
+          <td><strong>${fmtMoney(t.amount, t.currency)}</strong></td>
+          <td>${t.officeLabel || '—'}</td>
+          <td><span class="secret-pill">${t.secretCode}</span></td>
+          <td>
+            <button type="button" class="btn btn-success btn-sm" onclick="prefillPayout('${t.id}')">تسليم</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function prefillPayout(refId) {
+      document.getElementById('payoutRefInput').value = refId;
+      document.getElementById('payoutSecretInput').focus();
+    }
+
+    function processSecretPayout() {
+      const refId = document.getElementById('payoutRefInput').value.trim();
+      const secret = document.getElementById('payoutSecretInput').value.trim();
+      const tx = state.transactions.find((t) => t.id.toLowerCase() === refId.toLowerCase());
+
+      if (!tx) {
+        showToast('لم يتم العثور على رقم الحوالة');
+        return;
+      }
+      if (tx.status !== 'pending') {
+        showToast('هذه الحوالة تم تسليمها مسبقاً أو ليست بانتظار التسليم');
+        return;
+      }
+      if (String(tx.secretCode) !== secret) {
+        showToast('الرمز السري غير صحيح — يرجى التحقق من الرمز المكون من 6 أرقام');
+        return;
+      }
+
+      tx.status = 'delivered';
+      tx.deliveredAt = new Date().toLocaleString('ar-EG');
+      if (session.role === 'client') {
+        pushAdminNotification(`تم تسليم الحوالة ${tx.id} برمز سري صحيح بواسطة ${getCurrentClient().name}`);
+      }
+      saveState();
+      document.getElementById('payoutRefInput').value = '';
+      document.getElementById('payoutSecretInput').value = '';
+      refreshAllViews();
+      showToast(`تم التحقق وتسليم الحوالة ${tx.id} بنجاح`);
+    }
+
+    function renderLedgerTable() {
+      const tbody = document.getElementById('ledgerTableBody');
+      if (!tbody) return;
+      const q = (document.getElementById('ledgerSearch')?.value || '').trim().toLowerCase();
+
+      const filtered = state.transactions.filter((t) => {
+        if (session.role === 'client') {
+          const cid = session.clientId;
+          const involved = (t.ownerRole === 'client' && t.ownerClientId === cid) ||
+                           t.targetClientId === cid ||
+                           t.deliveryOfficeId === cid;
+          if (!involved) return false;
+        }
+        if (!q) return true;
+        return (t.id || '').toLowerCase().includes(q) ||
+               (t.recipientName || '').toLowerCase().includes(q) ||
+               (t.senderName || '').toLowerCase().includes(q) ||
+               (t.secretCode || '').toLowerCase().includes(q) ||
+               (t.officeLabel || '').toLowerCase().includes(q);
+      });
+
+      if (!filtered.length) {
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align:center; color:var(--muted);">لا توجد حركات مسجلة بعد</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = filtered.map((t) => {
+        const statusBadge = t.status === 'delivered' || t.status === 'completed'
+          ? '<span class="badge badge-success">مكتمل / مُسلّم</span>'
+          : '<span class="badge badge-warning">بانتظار التسليم</span>';
+        return `
+          <tr>
+            <td><strong>${t.id}</strong></td>
+            <td><span class="badge badge-info">${t.typeLabel || t.type}</span></td>
+            <td>
+              <div><strong>${t.recipientName}</strong></div>
+              <div style="font-size:0.76rem; color:var(--muted);">${t.officeLabel || ''}</div>
+            </td>
+            <td><strong>${fmtMoney(t.amount, t.currency)}</strong></td>
+            <td><span class="secret-pill">${t.secretCode || '—'}</span></td>
+            <td>${statusBadge}</td>
+            <td style="font-size:0.78rem;">${t.createdAt}</td>
+            <td>
+              <button type="button" class="btn btn-soft btn-sm" onclick="openVoucherModal('${t.id}')">إشعار</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function openVoucherModal(txId) {
+      const tx = state.transactions.find((t) => t.id === txId);
+      if (!tx) return;
+      currentVoucherTx = tx;
+
+      const logoHtml = state.logoDataUrl
+        ? `<img src="${state.logoDataUrl}" alt="العميد للتجارة" style="width:100%;height:100%;object-fit:cover;" />`
+        : DEFAULT_LOGO_SVG;
+
+      // الإشعار الرسمي لا يظهر أي أجور أو عمولات
+      document.getElementById('voucherContent').innerHTML = `
+        <div class="voucher-top">
+          <div class="brand-emblem">
+            <div class="brand-logo-box" style="width:58px;height:58px;">${logoHtml}</div>
+            <div>
+              <div style="font-weight:900; font-size:1.1rem;">ألعميد الدولي</div>
+              <div style="font-size:0.78rem; color:#475569; font-weight:700;">العميد للتجارة — سند حوالة رسمي</div>
+            </div>
+          </div>
+          <div style="text-align:left; font-size:0.8rem; font-weight:800;">
+            <div>رقم السند</div>
+            <div style="color:#1d4ed8;">${tx.id}</div>
+          </div>
+        </div>
+
+        <div class="voucher-center-code">
+          <div class="v-num">${tx.id}</div>
+          <div class="v-secret" title="الرمز السري">الرمز السري: ${tx.secretCode}</div>
+          <div class="v-date">${tx.createdAt}</div>
+        </div>
+
+        <div class="voucher-parties">
+          <div class="voucher-party-box">
+            <div class="vp-title">مرسل من</div>
+            <div class="vp-main">${tx.senderName}</div>
+            <div class="vp-sub">${tx.senderAddress || '—'}</div>
+          </div>
+          <div class="voucher-party-box">
+            <div class="vp-title">مرسل إلى / المستفيد</div>
+            <div class="vp-main">${tx.recipientName}</div>
+            <div class="vp-sub">${tx.recipientPhone ? 'هاتف: ' + tx.recipientPhone : (tx.destinationAddress || '—')}</div>
+          </div>
+        </div>
+
+        <div class="voucher-amount-banner">
+          ${fmtMoney(tx.amount, tx.currency)} (${CURRENCY_META[tx.currency]?.name || tx.currency})
+        </div>
+
+        <div class="voucher-office-footer">
+          <div><strong>مكتب التسليم / العنوان:</strong> ${tx.officeLabel || 'مكتب العميد للتجارة'}</div>
+          ${tx.note ? `<div style="margin-top:4px;"><strong>ملاحظة:</strong> ${tx.note}</div>` : ''}
+        </div>
+      `;
+
+      document.getElementById('voucherModal').classList.remove('hidden');
+    }
+
+    function buildCleanVoucherText(tx) {
+      return [
+        'إشعار حوالة — ألعميد الدولي (العميد للتجارة)',
+        `رقم الحوالة: ${tx.id}`,
+        `الرمز السري: ${tx.secretCode}`,
+        `التاريخ: ${tx.createdAt}`,
+        `المرسل: ${tx.senderName}`,
+        `المستفيد: ${tx.recipientName}`,
+        `المبلغ: ${fmtMoney(tx.amount, tx.currency)}`,
+        `مكتب التسليم / العنوان: ${tx.officeLabel || '—'}`
+      ].join('
+');
+    }
+
+    function copyVoucherText() {
+      if (!currentVoucherTx) return;
+      const txt = buildCleanVoucherText(currentVoucherTx);
+      navigator.clipboard?.writeText(txt).then(() => {
+        showToast('تم نسخ نص الإشعار بدون أجور');
+      }).catch(() => {
+        showToast('تم تجهيز نص الإشعار');
+      });
+    }
+
+    function shareVoucherWhatsApp() {
+      if (!currentVoucherTx) return;
+      const txt = encodeURIComponent(buildCleanVoucherText(currentVoucherTx));
+      window.open(`https://wa.me/?text=${txt}`, '_blank');
+    }
+
+    function renderClientsTable() {
+      const tbody = document.getElementById('clientsTableBody');
+      if (!tbody) return;
+      if (!state.clients.length) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; color:var(--muted);">لا يوجد عملاء مضافون</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = state.clients.map((c) => `
+        <tr>
+          <td><strong>${c.id}</strong></td>
+          <td>
+            <div><strong>${c.name}</strong></div>
+            <div style="font-size:0.78rem; color:var(--muted);">${c.contact || ''}</div>
+          </td>
+          <td style="max-width:240px;">${c.address || '<span style="color:var(--muted);">غير محدد</span>'}</td>
+          <td>
+            <div>TRY: <strong>${fmtMoney(c.balances.TRY, 'TRY')}</strong></div>
+            <div>USD: <strong>${fmtMoney(c.balances.USD, 'USD')}</strong></div>
+            <div>EUR: <strong>${fmtMoney(c.balances.EUR, 'EUR')}</strong></div>
+          </td>
+          <td style="font-size:0.76rem;">
+            ${c.permissions?.canSend ? '✓ إرسال ' : '✕ إرسال '}
+            ${c.permissions?.canInternal ? '✓ داخلي ' : '✕ داخلي '}
+            ${c.permissions?.canPayout ? '✓ تسليم' : '✕ تسليم'}
+          </td>
+          <td>
+            <span class="badge ${c.status === 'active' ? 'badge-success' : 'badge-danger'}">
+              ${c.status === 'active' ? 'نشط' : 'موقوف'}
+            </span>
+          </td>
+          <td>
+            <button type="button" class="btn btn-soft btn-sm" onclick="openClientModal('${c.id}')">تعديل</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function openClientModal(clientId = null) {
+      if (clientId) {
+        const c = state.clients.find((x) => x.id === clientId);
+        if (!c) return;
+        document.getElementById('clientModalTitle').textContent = `تعديل العميل (${c.id})`;
+        document.getElementById('editClientId').value = c.id;
+        document.getElementById('clName').value = c.name;
+        document.getElementById('clContact').value = c.contact || '';
+        document.getElementById('clAddress').value = c.address || '';
+        document.getElementById('clPass').value = c.password || '1234';
+        document.getElementById('clStatus').value = c.status || 'active';
+        document.getElementById('clBalTRY').value = Number(c.balances?.TRY || 0);
+        document.getElementById('clBalUSD').value = Number(c.balances?.USD || 0);
+        document.getElementById('clBalEUR').value = Number(c.balances?.EUR || 0);
+        document.getElementById('clCanSend').checked = !!c.permissions?.canSend;
+        document.getElementById('clCanInternal').checked = !!c.permissions?.canInternal;
+        document.getElementById('clCanPayout').checked = !!c.permissions?.canPayout;
+      } else {
+        document.getElementById('clientModalTitle').textContent = 'إضافة عميل جديد';
+        document.getElementById('editClientId').value = '';
+        document.getElementById('clName').value = '';
+        document.getElementById('clContact').value = '';
+        document.getElementById('clAddress').value = '';
+        document.getElementById('clPass').value = '1234';
+        document.getElementById('clStatus').value = 'active';
+        document.getElementById('clBalTRY').value = 0;
+        document.getElementById('clBalUSD').value = 0;
+        document.getElementById('clBalEUR').value = 0;
+        document.getElementById('clCanSend').checked = true;
+        document.getElementById('clCanInternal').checked = true;
+        document.getElementById('clCanPayout').checked = true;
+      }
+      document.getElementById('clientModal').classList.remove('hidden');
+    }
+
+    function saveClientFromModal() {
+      const editId = document.getElementById('editClientId').value;
+      const name = document.getElementById('clName').value.trim();
+      if (!name) {
+        showToast('يرجى إدخال اسم العميل أو المكتب');
+        return;
+      }
+
+      const data = {
+        name,
+        contact: document.getElementById('clContact').value.trim(),
+        address: document.getElementById('clAddress').value.trim(),
+        password: document.getElementById('clPass').value.trim() || '1234',
+        status: document.getElementById('clStatus').value,
+        balances: {
+          TRY: Number(document.getElementById('clBalTRY').value || 0),
+          USD: Number(document.getElementById('clBalUSD').value || 0),
+          EUR: Number(document.getElementById('clBalEUR').value || 0)
+        },
+        permissions: {
+          canSend: document.getElementById('clCanSend').checked,
+          canInternal: document.getElementById('clCanInternal').checked,
+          canPayout: document.getElementById('clCanPayout').checked
+        }
+      };
+
+      if (editId) {
+        const idx = state.clients.findIndex((x) => x.id === editId);
+        if (idx !== -1) state.clients[idx] = Object.assign({}, state.clients[idx], data);
+        showToast('تم تحديث بيانات العميل وعنوان مكتبه');
+      } else {
+        const newId = 'CL-' + (101 + state.clients.length + Math.floor(Math.random() * 50));
+        state.clients.push(Object.assign({ id: newId }, data));
+        showToast(`تم إضافة العميل ${name}`);
+      }
+
+      saveState();
+      closeModal('clientModal');
+      refreshAllViews();
+    }
+
+    function saveAdminBalances() {
+      state.admin.balances.TRY = Number(document.getElementById('adminSetTRY').value || 0);
+      state.admin.balances.USD = Number(document.getElementById('adminSetUSD').value || 0);
+      state.admin.balances.EUR = Number(document.getElementById('adminSetEUR').value || 0);
+      saveState();
+      refreshAllViews();
+      showToast('تم تحديث أرصدة الإدارة');
+    }
+
+    function zeroAllSystemBalances() {
+      state.admin.balances = { TRY: 0, USD: 0, EUR: 0 };
+      state.admin.profits = { TRY: 0, USD: 0, EUR: 0 };
+      state.clients.forEach((c) => {
+        c.balances = { TRY: 0, USD: 0, EUR: 0 };
+      });
+      state.transactions = [];
+      state.notifications = [];
+      saveState();
+      refreshAllViews();
+      showToast('تم تصفير جميع الأرصدة والحركات');
+    }
+
+    function toggleNotificationsMenu() {
+      document.getElementById('notifDropdown').classList.toggle('hidden');
+    }
+
+    function markAllNotificationsRead() {
+      state.notifications.forEach((n) => (n.read = true));
+      saveState();
+      renderNotifications();
+    }
+
+    function renderNotifications() {
+      const unread = state.notifications.filter((n) => !n.read).length;
+      const badge = document.getElementById('bellCount');
+      if (badge) badge.textContent = unread;
+
+      const list = document.getElementById('notifList');
+      if (!list) return;
+      if (!state.notifications.length) {
+        list.innerHTML = '<div class="notif-item" style="color:var(--muted); text-align:center;">لا توجد تنبيهات حالياً</div>';
+        return;
+      }
+      list.innerHTML = state.notifications.slice(0, 20).map((n) => `
+        <div class="notif-item ${n.read ? '' : 'unread'}">
+          <div>${n.message}</div>
+          <div class="notif-time">${n.time}</div>
+        </div>
+      `).join('');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    renderBrandLogos();
+    populateQuickClientSelect();
+  </script>
+</body>
+</html>
